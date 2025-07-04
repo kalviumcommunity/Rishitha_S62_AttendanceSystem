@@ -1,12 +1,13 @@
 package com.school;
 
 public class Student {
-    int studentId;
-    String name;
+    private static int nextStudentIdCounter = 1; // Static variable to keep track of the next student ID
+    private int studentId;
+    private String name;
 
-    public void setDetails(int id, String studentName) {
-        this.studentId = id; 
-        this.name = studentName;
+    public Student(String name) {
+        this.studentId = nextStudentIdCounter++;
+        this.name = name;
     }
 
     public void displayDetails() {
